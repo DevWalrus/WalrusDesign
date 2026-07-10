@@ -3,6 +3,7 @@ import React from 'react';
 export interface NavLink {
   label: string;
   href?: string;
+  onClick?: (e: MouseEvent) => void;
 }
 
 export interface NavProps {

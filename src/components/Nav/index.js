@@ -46,6 +46,7 @@ export function Nav({ mark = 'CH', appName = null, links = [], active = null, ct
           {
             key: link.label,
             href: link.href || '#',
+            onClick: link.onClick,
             style: {
               fontSize: 'var(--text-xs)',
               letterSpacing: 'var(--tracking-wide)',
