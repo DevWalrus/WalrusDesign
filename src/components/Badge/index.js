@@ -1,5 +1,14 @@
 import React from 'react';
 
+/**
+ * Status pill for labels, tags, and state indicators.
+ *
+ * @see https://design.clintenhopkins.com/?path=/docs/components-badge--docs
+ *
+ * @param {'neutral'|'primary'|'success'|'warning'|'danger'|'info'} [tone='neutral']
+ * @param {boolean} [dot=false] - Renders a glowing status dot before the label.
+ * @param {React.ReactNode} children
+ */
 export function Badge({ tone = 'neutral', children, dot = false, style, ...rest }) {
   const tones = {
     neutral: { bg: 'var(--bg-2)', fg: 'var(--fg-1)', border: 'var(--border-0)', dot: 'var(--fg-2)' },

@@ -1,5 +1,17 @@
 import React from 'react';
 
+/**
+ * Full-width page banner for top-of-page hero sections. Supports dot-grid and scanline
+ * background textures defined in the design token set.
+ *
+ * @see https://design.clintenhopkins.com/?path=/docs/components-hero--docs
+ *
+ * @param {string} [title] - Primary headline, rendered in display font at --text-3xl.
+ * @param {string} [subtitle] - Supporting copy rendered in body font below the title.
+ * @param {React.ReactNode} [cta] - Optional slot for one or more buttons.
+ * @param {'dots'|'scanlines'|'none'} [texture='dots']
+ * @param {'left'|'center'} [align='left']
+ */
 const textures = {
   scanlines: {
     backgroundImage: 'var(--texture-scanlines)',
@@ -17,6 +29,7 @@ export function Hero({ title, subtitle, cta = null, texture = 'dots', align = 'l
   return React.createElement(
     'section',
     {
+      'aria-label': title || 'Hero',
       style: {
         backgroundColor: 'var(--bg-1)',
         ...textures[texture],

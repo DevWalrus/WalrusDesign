@@ -1,5 +1,18 @@
 import React from 'react';
 
+/**
+ * Primary interactive element. Supports four variants and three sizes.
+ *
+ * @see https://design.clintenhopkins.com/?path=/docs/components-button--docs
+ *
+ * @param {'primary'|'secondary'|'ghost'|'danger'} [variant='primary']
+ * @param {'sm'|'md'|'lg'} [size='md']
+ * @param {boolean} [disabled=false]
+ * @param {React.ReactNode} [icon] - Optional icon element.
+ * @param {'left'|'right'} [iconPosition='left']
+ * @param {React.ReactNode} children
+ * @param {() => void} [onClick]
+ */
 function createButtonStyles(size) {
   const sizes = {
     sm: { padding: '6px 14px', fontSize: 'var(--text-xs)', gap: 6 },
@@ -68,7 +81,13 @@ export function Button({
       type,
       disabled,
       onClick,
-      style: { ...base, ...variants[variant], ...style },
+      style: { ...base, ...variants[variant], outline: 'none', ...style },
+      onFocus: (event) => {
+        event.currentTarget.style.boxShadow = 'var(--ring-focus)';
+      },
+      onBlur: (event) => {
+        event.currentTarget.style.boxShadow = 'none';
+      },
       onMouseEnter: (event) => {
         if (disabled) return;
         if (variant === 'primary') event.currentTarget.style.background = 'var(--primary-strong)';
