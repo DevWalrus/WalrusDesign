@@ -33,7 +33,8 @@
     "typecheck": "tsc --noEmit",
     "build": "npm run typecheck && npm run build:css",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "test:a11y": "vitest --project=storybook"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^5.2.1",

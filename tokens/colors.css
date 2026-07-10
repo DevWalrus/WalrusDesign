@@ -21,7 +21,7 @@
 
   /* ---- primary accent: maroon / pink ---- */
   --primary-hue: 350;
-  --primary: oklch(60% 0.19 var(--primary-hue));
+  --primary: oklch(56% 0.19 var(--primary-hue));
   --primary-strong: oklch(68% 0.20 var(--primary-hue));
   --primary-dim: oklch(46% 0.15 var(--primary-hue));
   --primary-wash: oklch(26% 0.06 var(--primary-hue));   /* tinted bg for chips/highlights */
@@ -32,7 +32,7 @@
   --success-wash: oklch(24% 0.05 150);
   --warning: oklch(70% 0.15 80);
   --warning-wash: oklch(26% 0.05 80);
-  --danger: oklch(60% 0.17 25);
+  --danger: oklch(67% 0.17 25);
   --danger-wash: oklch(25% 0.06 25);
   --info: oklch(62% 0.13 230);
   --info-wash: oklch(24% 0.05 230);
