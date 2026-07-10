@@ -1,6 +1,6 @@
 {
   "name": "@devwalrus/walrus-design",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "private": false,
   "description": "Terminal-flavored personal design system for React apps.",
   "license": "MIT",
