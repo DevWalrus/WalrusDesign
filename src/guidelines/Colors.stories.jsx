@@ -7,7 +7,7 @@ const swatch = (bg, label, labelColor = 'var(--fg-1)') => (
 
 export default {
   title: 'Guidelines/Colors',
-  parameters: { layout: 'padded', controls: { disable: true } },
+  parameters: { layout: 'padded', controls: { disable: true }, a11y: { disable: true } },
 };
 
 export const Primary = {

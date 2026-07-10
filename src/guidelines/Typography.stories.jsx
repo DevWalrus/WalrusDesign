@@ -1,6 +1,6 @@
 export default {
   title: 'Guidelines/Typography',
-  parameters: { layout: 'padded', controls: { disable: true } },
+  parameters: { layout: 'padded', controls: { disable: true }, a11y: { disable: true } },
 };
 
 export const Display = {

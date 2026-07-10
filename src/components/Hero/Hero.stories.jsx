@@ -59,3 +59,17 @@ export const WithCTACentered = {
     ),
   },
 };
+
+export const LightMode = {
+  name: 'Light Mode',
+  globals: { theme: 'light' },
+  parameters: { layout: 'fullscreen' },
+  args: {
+    cta: (
+      <>
+        <Button variant="primary" size="lg">View my work</Button>
+        <Button variant="secondary" size="lg">Get in touch</Button>
+      </>
+    ),
+  },
+};

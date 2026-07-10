@@ -2,6 +2,22 @@ import '../styles.css';
 
 /** @type { import('@storybook/react-vite').Preview } */
 const preview = {
+  globalTypes: {
+    theme: {
+      description: 'Color theme',
+      defaultValue: 'dark',
+      toolbar: {
+        title: 'Theme',
+        icon: 'circlehollow',
+        items: [
+          { value: 'dark', title: 'Dark' },
+          { value: 'light', title: 'Light' },
+        ],
+        dynamicTitle: true,
+      },
+    },
+  },
+
   parameters: {
     controls: {
       matchers: {
@@ -9,28 +25,29 @@ const preview = {
         date: /Date$/i,
       },
     },
-
     backgrounds: { disable: true },
     layout: 'centered',
-
     a11y: {
-      // 'todo' - show a11y violations in the test UI only
-      // 'error' - fail CI on a11y violations
-      // 'off' - skip a11y checks entirely
-      test: 'error'
-    }
+      test: 'error',
+    },
   },
+
   decorators: [
-    (Story) => (
-      <div style={{ 
-        background: 'var(--bg-0)',
-        //minHeight: '100vh',
-        padding: '2rem',
-        boxSizing: 'border-box'
-      }}>
-        <Story />
-      </div>
-    ),
+    (Story, context) => {
+      const theme = context.globals.theme || 'dark';
+      return (
+        <div
+          data-theme={theme}
+          style={{
+            background: 'var(--bg-0)',
+            padding: '2rem',
+            boxSizing: 'border-box',
+          }}
+        >
+          <Story />
+        </div>
+      );
+    },
   ],
 };
 

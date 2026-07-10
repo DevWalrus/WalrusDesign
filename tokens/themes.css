@@ -1,0 +1,127 @@
+/* ============================================================
+   THEME OVERRIDES
+   Dark is the default (defined in colors.css :root).
+   Light mode applies via OS preference unless overridden by
+   an explicit data-theme attribute on <html>.
+
+   Only color + texture tokens change.
+   Spacing, typography, radius, and motion are theme-invariant.
+   ============================================================ */
+
+/* ---- light values ----------------------------------------- */
+/* Applied when OS prefers light AND no explicit theme is set  */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg-0: oklch(98% 0.008 80);
+    --bg-1: oklch(95% 0.010 80);
+    --bg-2: oklch(91% 0.010 80);
+    --bg-3: oklch(87% 0.010 80);
+
+    --border-0: oklch(82% 0.010 80);
+    --border-1: oklch(70% 0.012 80);
+
+    --fg-0: oklch(16% 0.010 30);
+    --fg-1: oklch(35% 0.010 30);
+    --fg-2: oklch(55% 0.010 30);
+
+    /* Accent foreground colors must be dark enough for light surfaces.
+       Chroma is raised to preserve vibrancy at the reduced lightness. */
+    --primary-strong: oklch(42% 0.28 var(--primary-hue));
+    --success:        oklch(36% 0.20 150);
+    --warning:        oklch(42% 0.18 55);
+    --danger:         oklch(42% 0.25 25);
+    --info:           oklch(38% 0.18 230);
+
+    --primary-wash: oklch(92% 0.04 var(--primary-hue));
+
+    --success-wash: oklch(92% 0.04 150);
+    --warning-wash: oklch(93% 0.04 80);
+    --danger-wash:  oklch(93% 0.04 25);
+    --info-wash:    oklch(92% 0.04 230);
+
+    --texture-scanlines: repeating-linear-gradient(
+      0deg,
+      oklch(0% 0 0 / 0.04) 0px,
+      oklch(0% 0 0 / 0.04) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+    --texture-dots: radial-gradient(oklch(0% 0 0 / 0.08) 1px, transparent 1px);
+  }
+}
+
+/* Explicit override — always wins over OS preference */
+[data-theme="light"] {
+  --bg-0: oklch(98% 0.008 80);
+  --bg-1: oklch(95% 0.010 80);
+  --bg-2: oklch(91% 0.010 80);
+  --bg-3: oklch(87% 0.010 80);
+
+  --border-0: oklch(82% 0.010 80);
+  --border-1: oklch(70% 0.012 80);
+
+  --fg-0: oklch(16% 0.010 30);
+  --fg-1: oklch(35% 0.010 30);
+  --fg-2: oklch(55% 0.010 30);
+
+  /* Accent foreground colors must be dark enough for light surfaces.
+     Chroma is raised to preserve vibrancy at the reduced lightness. */
+  --primary-strong: oklch(42% 0.28 var(--primary-hue));
+  --success:        oklch(36% 0.20 150);
+  --warning:        oklch(42% 0.18 55);
+  --danger:         oklch(42% 0.25 25);
+  --info:           oklch(38% 0.18 230);
+
+  --primary-wash: oklch(92% 0.04 var(--primary-hue));
+
+  --success-wash: oklch(92% 0.04 150);
+  --warning-wash: oklch(93% 0.04 80);
+  --danger-wash:  oklch(93% 0.04 25);
+  --info-wash:    oklch(92% 0.04 230);
+
+  --texture-scanlines: repeating-linear-gradient(
+    0deg,
+    oklch(0% 0 0 / 0.04) 0px,
+    oklch(0% 0 0 / 0.04) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  --texture-dots: radial-gradient(oklch(0% 0 0 / 0.08) 1px, transparent 1px);
+}
+
+/* Explicit dark — restores dark tokens even if OS prefers light */
+[data-theme="dark"] {
+  --bg-0: oklch(15% 0.010 30);
+  --bg-1: oklch(19% 0.012 30);
+  --bg-2: oklch(24% 0.014 30);
+  --bg-3: oklch(29% 0.015 30);
+
+  --border-0: oklch(30% 0.014 30);
+  --border-1: oklch(38% 0.016 30);
+
+  --fg-0: oklch(94% 0.006 80);
+  --fg-1: oklch(78% 0.010 80);
+  --fg-2: oklch(58% 0.012 80);
+
+  --primary-strong: oklch(68% 0.20 var(--primary-hue));
+  --success:        oklch(62% 0.15 150);
+  --warning:        oklch(70% 0.15 80);
+  --danger:         oklch(67% 0.17 25);
+  --info:           oklch(62% 0.13 230);
+
+  --primary-wash: oklch(26% 0.06 var(--primary-hue));
+
+  --success-wash: oklch(24% 0.05 150);
+  --warning-wash: oklch(26% 0.05 80);
+  --danger-wash:  oklch(25% 0.06 25);
+  --info-wash:    oklch(24% 0.05 230);
+
+  --texture-scanlines: repeating-linear-gradient(
+    0deg,
+    oklch(100% 0 0 / 0.02) 0px,
+    oklch(100% 0 0 / 0.02) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  --texture-dots: radial-gradient(oklch(100% 0 0 / 0.06) 1px, transparent 1px);
+}

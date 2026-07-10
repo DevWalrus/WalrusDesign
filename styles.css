@@ -2,6 +2,7 @@
 @import './tokens/typography.css';
 @import './tokens/spacing.css';
 @import './tokens/effects.css';
+@import './tokens/themes.css';
 
 @keyframes ds-caret-blink {
   0%, 49% { opacity: 1; }

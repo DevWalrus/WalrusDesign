@@ -42,3 +42,12 @@ export const NoActiveLink = {
   name: 'No Active Link',
   args: { active: null },
 };
+
+export const LightMode = {
+  name: 'Light Mode',
+  globals: { theme: 'light' },
+  parameters: { layout: 'fullscreen' },
+  args: {
+    cta: <Button size="sm" variant="primary">Hire me</Button>,
+  },
+};

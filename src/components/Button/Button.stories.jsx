@@ -55,3 +55,17 @@ export const AllSizes = {
     </div>
   ),
 };
+
+export const LightMode = {
+  name: 'Light Mode',
+  globals: { theme: 'light' },
+  render: () => (
+    <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', alignItems: 'center' }}>
+      <Button variant="primary">Primary</Button>
+      <Button variant="secondary">Secondary</Button>
+      <Button variant="ghost">Ghost</Button>
+      <Button variant="danger">Danger</Button>
+      <Button variant="primary" disabled>Disabled</Button>
+    </div>
+  ),
+};

@@ -48,3 +48,15 @@ export const WithDots = {
     </div>
   ),
 };
+
+export const LightMode = {
+  name: 'Light Mode',
+  globals: { theme: 'light' },
+  render: () => (
+    <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', alignItems: 'center' }}>
+      {['neutral', 'primary', 'success', 'warning', 'danger', 'info'].map((tone) => (
+        <Badge key={tone} tone={tone} dot>{tone}</Badge>
+      ))}
+    </div>
+  ),
+};

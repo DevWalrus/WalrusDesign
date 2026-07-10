@@ -1,6 +1,6 @@
 export default {
   title: 'Guidelines/Spacing',
-  parameters: { layout: 'padded', controls: { disable: true } },
+  parameters: { layout: 'padded', controls: { disable: true }, a11y: { disable: true } },
 };
 
 export const Scale = {

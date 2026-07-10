@@ -59,3 +59,14 @@ export const Grid = {
     </div>
   ),
 };
+
+export const LightMode = {
+  name: 'Light Mode',
+  globals: { theme: 'light' },
+  render: () => (
+    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 14, width: 500 }}>
+      <Card title="Static card">Plain content, no hover.</Card>
+      <Card title="Clickable card" onClick={() => {}}>Hover and click me.</Card>
+    </div>
+  ),
+};
