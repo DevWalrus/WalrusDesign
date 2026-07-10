@@ -1,0 +1,57 @@
+{
+  "name": "@devwalrus/walrus-design",
+  "version": "0.1.0",
+  "private": false,
+  "description": "Terminal-flavored personal design system for React apps.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./index.js",
+  "types": "./src/index.d.ts",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "default": "./index.js"
+    },
+    "./styles.css": "./dist/styles.css"
+  },
+  "files": [
+    "index.js",
+    "src/index.d.ts",
+    "src/components/**/index.js",
+    "src/components/**/index.d.ts",
+    "dist/styles.css"
+  ],
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "scripts": {
+    "build:css": "postcss styles.css -o dist/styles.css",
+    "typecheck": "tsc --noEmit",
+    "build": "npm run typecheck && npm run build:css",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "devDependencies": {
+    "@chromatic-com/storybook": "^5.2.1",
+    "@storybook/addon-a11y": "^10.4.6",
+    "@storybook/addon-docs": "^10.4.6",
+    "@storybook/addon-mcp": "^0.6.0",
+    "@storybook/addon-vitest": "^10.4.6",
+    "@storybook/react-vite": "^10.4.6",
+    "@vitest/browser-playwright": "^4.1.10",
+    "@vitest/coverage-v8": "^4.1.10",
+    "cssnano": "^7.1.9",
+    "playwright": "^1.61.1",
+    "postcss": "^8.5.16",
+    "postcss-cli": "^11.0.1",
+    "postcss-import": "^16.1.1",
+    "prop-types": "^15.8.1",
+    "storybook": "^10.4.6",
+    "typescript": "^7.0.2",
+    "vitest": "^4.1.10"
+  }
+}

@@ -1,0 +1,37 @@
+/* ============================================================
+   EFFECTS TOKENS — radius, shadow, motion, terminal texture
+   Deliberately understated corners (never fully pill on containers)
+   and a faint scanline grid instead of gradients — the "personality"
+   layer for an otherwise minimal, dark UI.
+   ============================================================ */
+
+:root {
+  --radius-sm: 3px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+  --radius-pill: 999px;   /* reserved for true pills: tags, status dots */
+
+  --shadow-sm: 0 1px 0 0 oklch(0% 0 0 / 0.4);
+  --shadow-md: 0 8px 24px -8px oklch(0% 0 0 / 0.55);
+  --shadow-lg: 0 24px 64px -16px oklch(0% 0 0 / 0.6);
+
+  --ring-focus: 0 0 0 2px var(--bg-0), 0 0 0 4px var(--primary);
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 120ms;
+  --duration-med: 220ms;
+
+  /* faint repeating scanline used as a background texture on hero/section
+     surfaces — never on text-bearing cards */
+  --texture-scanlines: repeating-linear-gradient(
+    0deg,
+    oklch(100% 0 0 / 0.02) 0px,
+    oklch(100% 0 0 / 0.02) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+
+  /* dot-grid used sparingly behind hero sections */
+  --texture-dots: radial-gradient(oklch(100% 0 0 / 0.06) 1px, transparent 1px);
+  --texture-dots-size: 20px 20px;
+}

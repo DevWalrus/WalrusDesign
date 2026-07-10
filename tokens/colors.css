@@ -1,0 +1,43 @@
+/* ============================================================
+   COLOR TOKENS — dark-first, maroon/pink primary
+   Base scale uses oklch for perceptual consistency.
+   All accent hues share chroma 0.16–0.19 / lightness ~58–68%,
+   varied only by hue — primary (maroon/pink) plus semantic status hues.
+   ============================================================ */
+
+:root {
+  /* ---- base neutrals (slightly warm, near-black) ---- */
+  --bg-0: oklch(15% 0.010 30);      /* page background */
+  --bg-1: oklch(19% 0.012 30);      /* raised surface / card */
+  --bg-2: oklch(24% 0.014 30);      /* hover surface */
+  --bg-3: oklch(29% 0.015 30);      /* active / pressed surface */
+
+  --border-0: oklch(30% 0.014 30);  /* subtle hairline */
+  --border-1: oklch(38% 0.016 30);  /* stronger border, focus rest state */
+
+  --fg-0: oklch(94% 0.006 80);      /* primary text */
+  --fg-1: oklch(78% 0.010 80);      /* secondary text */
+  --fg-2: oklch(58% 0.012 80);      /* muted / placeholder text */
+
+  /* ---- primary accent: maroon / pink ---- */
+  --primary-hue: 350;
+  --primary: oklch(60% 0.19 var(--primary-hue));
+  --primary-strong: oklch(68% 0.20 var(--primary-hue));
+  --primary-dim: oklch(46% 0.15 var(--primary-hue));
+  --primary-wash: oklch(26% 0.06 var(--primary-hue));   /* tinted bg for chips/highlights */
+  --on-primary: oklch(99% 0 0);
+
+  /* ---- semantic status hues (same C/L family as primary) ---- */
+  --success: oklch(62% 0.15 150);
+  --success-wash: oklch(24% 0.05 150);
+  --warning: oklch(70% 0.15 80);
+  --warning-wash: oklch(26% 0.05 80);
+  --danger: oklch(60% 0.17 25);
+  --danger-wash: oklch(25% 0.06 25);
+  --info: oklch(62% 0.13 230);
+  --info-wash: oklch(24% 0.05 230);
+
+  /* ---- links ---- */
+  --link: var(--primary-strong);
+  --link-hover: oklch(76% 0.19 var(--primary-hue));
+}
