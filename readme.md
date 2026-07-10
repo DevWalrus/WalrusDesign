@@ -4,8 +4,8 @@ A dark-mode-first, terminal-flavored design system for clintenhopkins.com and re
 
 ## Packages & tools
 
-- **npm package** — `@devwalrus/walrus-design` — React components + CSS tokens
-- **Storybook** — living docs at `design.clintenhopkins.com`
+- **npm package** - `@devwalrus/walrus-design` - React components + CSS tokens
+- **Storybook** - living docs at `design.clintenhopkins.com`
 
 ## Consuming the package
 
@@ -35,10 +35,10 @@ Your `.npmrc` must point the scoped package at GitHub Packages:
 
 ## What consumers receive
 
-- **JS components** — plain `React.createElement`, no JSX transpilation required
-- **TypeScript declarations** — `.d.ts` files for all components
-- **`styles.css`** — imports all token files; link this once per app
-- **`tokens/`** — `colors.css`, `typography.css`, `spacing.css`, `effects.css`
+- **JS components** - plain `React.createElement`, no JSX transpilation required
+- **TypeScript declarations** - `.d.ts` files for all components
+- **`styles.css`** - imports all token files; link this once per app
+- **`tokens/`** - `colors.css`, `typography.css`, `spacing.css`, `effects.css`
 
 ## Project structure
 
@@ -52,26 +52,26 @@ src/
     Hero/
   guidelines/       # Token reference stories (Colors, Typography, Spacing, Brand)
 tokens/             # Raw CSS custom property files
-styles.css          # Root stylesheet — import this in consuming apps
+styles.css          # Root stylesheet - import this in consuming apps
 index.js            # Package entry point
 ```
 
 ## Visual foundations
 
 - **Color:** dark-first. Near-black warm-neutral surfaces (`--bg-0` → `--bg-3`) with a maroon/pink primary accent. Semantic colors (success / warning / danger / info) share the same chroma family.
-- **Type:** Space Grotesk for display + body. JetBrains Mono for nav, labels, badges, buttons — the mono-for-UI-chrome / sans-for-content split is the system's main personality device.
+- **Type:** Space Grotesk for display + body. JetBrains Mono for nav, labels, badges, buttons - the mono-for-UI-chrome / sans-for-content split is the system's main personality device.
 - **Spacing:** 4px base unit. Content column capped at `--content-max` (760px), page shell at `--page-max` (1120px).
 - **Texture:** `--texture-dots` (dot-grid) and `--texture-scanlines` for hero surfaces. Applied via `background-image`.
 - **Animation:** blinking terminal caret (`ds-caret-blink`, defined in `styles.css`) and 120–220ms ease-out hover transitions only.
 - **Borders:** 1px hairlines everywhere instead of drop shadows. `--shadow-sm` for subtle card depth only.
-- **Radii:** small and deliberate — 3px buttons, 6px cards, 10px larger surfaces.
+- **Radii:** small and deliberate - 3px buttons, 6px cards, 10px larger surfaces.
 
 ## Voice & content rules
 
 - First person, direct, understated. No exclamation points, no buzzwords.
 - Sentence case for prose; UPPERCASE + wide tracking for UI labels and section eyebrows (mono font only).
-- Prefix section eyebrows with `//` or `$` — e.g. `// selected work`, `$ whoami`.
-- Specific metrics over vague claims — "cut deploy time from 40min to 6min," not "significantly improved."
+- Prefix section eyebrows with `//` or `$` - e.g. `// selected work`, `$ whoami`.
+- Specific metrics over vague claims - "cut deploy time from 40min to 6min," not "significantly improved."
 - No emoji anywhere in this system.
 
 ## Publishing
