@@ -27,12 +27,12 @@ describe('Hero', () => {
 
   it('centers content when align is center', () => {
     render(<Hero title="t" align="center" cta={<button>Go</button>} />);
-    expect(screen.getByRole('region')).toHaveStyle({ alignItems: 'center' });
+    expect(screen.getByRole('region').className).toContain('items-center');
   });
 
   it('left-aligns by default and renders a cta', () => {
     render(<Hero title="t" cta={<button>Go</button>} />);
-    expect(screen.getByRole('region')).toHaveStyle({ alignItems: 'flex-start' });
+    expect(screen.getByRole('region').className).toContain('items-start');
     expect(screen.getByRole('button', { name: 'Go' })).toBeInTheDocument();
   });
 });

@@ -11,7 +11,7 @@ describe('Button', () => {
 
   it('uppercases non-primary variants', () => {
     render(<Button variant="secondary">go</Button>);
-    expect(screen.getByRole('button')).toHaveStyle({ textTransform: 'uppercase' });
+    expect(screen.getByRole('button').className).toContain('uppercase');
   });
 
   it.each(['primary', 'secondary', 'ghost', 'danger'] as const)(
