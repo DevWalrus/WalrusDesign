@@ -11,6 +11,7 @@ permissions:
 
 jobs:
   publish:
+    name: Build + Test + Publish
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -20,16 +21,17 @@ jobs:
           node-version: 20
           registry-url: https://npm.pkg.github.com
           scope: '@devwalrus'
+          cache: npm
 
       - run: npm ci
 
-      - run: npm run build
-
       - run: npm run typecheck
+
+      - run: npm run build
 
       - run: node_modules/.bin/playwright install --with-deps chromium
 
-      - run: npm run test:a11y
+      - run: npm test
 
       - run: npm publish
         env:

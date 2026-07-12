@@ -1,0 +1,37 @@
+name: Publish site
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  id-token: write  # required for Azure OIDC if you move to keyless auth later
+
+jobs:
+  deploy:
+    name: Build Storybook + Deploy to Azure SWA
+    runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: https://design.clintenhopkins.com
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - run: npm run build-storybook
+
+      - name: Deploy to Azure Static Web Apps
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
+          action: upload
+          app_location: /              # repo root (no server-side app)
+          output_location: storybook-static
+          skip_app_build: true         # we built above; SWA doesn't need to rebuild

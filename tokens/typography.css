@@ -4,7 +4,7 @@
    JetBrains Mono — labels, nav, meta, code, badges (terminal accents)
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import '../fonts/fonts.css';
 
 :root {
   --font-display: 'Space Grotesk', 'Helvetica Neue', Arial, sans-serif;

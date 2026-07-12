@@ -5,36 +5,75 @@
   "description": "Terminal-flavored personal design system for React apps.",
   "license": "MIT",
   "type": "module",
-  "main": "./index.js",
-  "types": "./src/index.d.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
   "exports": {
     ".": {
-      "types": "./src/index.d.ts",
-      "default": "./index.js"
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
     },
-    "./styles.css": "./dist/styles.css"
+    "./Button": {
+      "types": "./dist/components/Button/index.d.ts",
+      "default": "./dist/components/Button/index.js"
+    },
+    "./Badge": {
+      "types": "./dist/components/Badge/index.d.ts",
+      "default": "./dist/components/Badge/index.js"
+    },
+    "./Nav": {
+      "types": "./dist/components/Nav/index.d.ts",
+      "default": "./dist/components/Nav/index.js"
+    },
+    "./Card": {
+      "types": "./dist/components/Card/index.d.ts",
+      "default": "./dist/components/Card/index.js"
+    },
+    "./Hero": {
+      "types": "./dist/components/Hero/index.d.ts",
+      "default": "./dist/components/Hero/index.js"
+    },
+    "./ThemeToggle": {
+      "types": "./dist/components/ThemeToggle/index.d.ts",
+      "default": "./dist/components/ThemeToggle/index.js"
+    },
+    "./Table": {
+      "types": "./dist/components/Table/index.d.ts",
+      "default": "./dist/components/Table/index.js"
+    },
+    "./Tabs": {
+      "types": "./dist/components/Tabs/index.d.ts",
+      "default": "./dist/components/Tabs/index.js"
+    },
+    "./theme": {
+      "types": "./dist/theme/index.d.ts",
+      "default": "./dist/theme/index.js"
+    },
+    "./styles.css": "./dist/styles.css",
+    "./utilities.css": "./dist/utilities.css"
   },
   "files": [
-    "index.js",
-    "src/index.d.ts",
-    "src/components/**/index.js",
-    "src/components/**/index.d.ts",
-    "dist/styles.css"
+    "dist"
   ],
   "peerDependencies": {
     "react": ">=18",
     "react-dom": ">=18"
   },
   "scripts": {
-    "build:css": "postcss styles.css -o dist/styles.css",
+    "clean": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\"",
+    "build:lib": "tsc -p tsconfig.build.json",
+    "build:css": "postcss styles.css -o dist/styles.css && postcss utilities.css -o dist/utilities.css",
+    "build:fonts": "node -e \"const fs=require('fs');fs.mkdirSync('dist/fonts',{recursive:true});fs.readdirSync('fonts').filter(f=>f.endsWith('.woff2')).forEach(f=>fs.copyFileSync('fonts/'+f,'dist/fonts/'+f))\"",
     "typecheck": "tsc --noEmit",
-    "build": "npm run typecheck && npm run build:css",
+    "build": "npm run clean && npm run build:lib && npm run build:css && npm run build:fonts",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "test:a11y": "vitest --project=storybook"
+    "test:unit": "vitest run --project=unit --coverage",
+    "test:a11y": "vitest run --project=storybook",
+    "test": "npm run test:unit && npm run test:a11y"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^5.2.1",
@@ -43,14 +82,16 @@
     "@storybook/addon-mcp": "^0.6.0",
     "@storybook/addon-vitest": "^10.4.6",
     "@storybook/react-vite": "^10.4.6",
+    "@testing-library/react": "^16.3.2",
     "@vitest/browser-playwright": "^4.1.10",
     "@vitest/coverage-v8": "^4.1.10",
     "cssnano": "^7.1.9",
+    "jsdom": "^25.0.1",
     "playwright": "^1.61.1",
     "postcss": "^8.5.16",
     "postcss-cli": "^11.0.1",
     "postcss-import": "^16.1.1",
-    "prop-types": "^15.8.1",
+    "postcss-url": "^10.1.4",
     "storybook": "^10.4.6",
     "typescript": "^7.0.2",
     "vitest": "^4.1.10"

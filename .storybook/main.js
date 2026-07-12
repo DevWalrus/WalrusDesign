@@ -2,7 +2,6 @@
 const config = {
   stories: [
     '../src/**/*.stories.@(js|jsx)',
-    '../src/**/*.mdx',
   ],
   addons: [
     '@chromatic-com/storybook',
@@ -12,6 +11,9 @@ const config = {
     '@storybook/addon-mcp',
   ],
   framework: '@storybook/react-vite',
+  typescript: {
+    reactDocgen: 'react-docgen',
+  },
 };
 
 export default config;
