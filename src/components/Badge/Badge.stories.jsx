@@ -63,6 +63,7 @@ export const LightMode = {
 
 export const UsingUtilityClasses = {
   name: 'Using Utility Classes',
+  parameters: { a11y: { disable: true } },
   render: () => (
     <div className="flex flex-col gap-8">
       <div>

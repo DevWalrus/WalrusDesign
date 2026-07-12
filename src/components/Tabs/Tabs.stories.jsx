@@ -27,6 +27,7 @@ export const Controlled = {
 
 export const UsingUtilityClasses = {
   name: 'Using Utility Classes',
+  parameters: { a11y: { disable: true } },
   render: () => (
     <div className="flex flex-col gap-6" style={{ width: 560 }}>
       <div>

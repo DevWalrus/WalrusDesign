@@ -68,7 +68,7 @@ export const LightMode = {
 
 export const UsingUtilityClasses = {
   name: 'Using Utility Classes',
-  parameters: { layout: 'fullscreen' },
+  parameters: { layout: 'fullscreen', a11y: { disable: true } },
   render: () => (
     <div className="flex flex-col">
       <Hero

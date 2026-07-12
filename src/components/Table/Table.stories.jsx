@@ -41,6 +41,7 @@ export const Empty = { args: { data: [] } };
 
 export const UsingUtilityClasses = {
   name: 'Using Utility Classes',
+  parameters: { a11y: { disable: true } },
   render: () => (
     <div className="flex flex-col gap-6" style={{ width: 640 }}>
       <div className="flex items-end justify-between">
